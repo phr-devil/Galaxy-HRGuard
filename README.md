@@ -65,8 +65,12 @@ Download the archive, then either extract the participant folders yourself or
 let the intake step do it:
 
 ```bash
-python -c "from hrguard.prepare import unpack_dev; unpack_dev('path/to/GalaxyPPG.zip', 'data/raw')"
+python -c "from hrguard.prepare import unpack_dev; \
+    unpack_dev('path/to/GalaxyPPG.zip', 'data/raw', 'outputs/zip_manifest.json')"
 ```
+
+Only the development participants are extracted, five files each; the held-out
+participants stay inside the archive unless you open them deliberately.
 
 The layout expected under `data/raw` (or `$HRGUARD_DATA`) is one folder per
 participant:
