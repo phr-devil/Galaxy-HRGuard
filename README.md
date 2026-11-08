@@ -108,7 +108,9 @@ python scripts/03_extract_signals.py --raw "$HRGUARD_DATA" \
 
 # 4. Window universe with reference values attached
 python scripts/04_build_universe.py --raw "$HRGUARD_DATA" \
-    --audit $OUT/raw_audit_dev.json --out $OUT/pivot/endpoint_audit_windows.csv
+    --audit $OUT/raw_audit_dev.json --out $OUT/pivot/endpoint_audit.json
+# writes $OUT/pivot/endpoint_audit.json (report) and
+#        $OUT/pivot/endpoint_audit_windows.csv (the window table)
 
 # 5. Legal feature table
 python scripts/05_extract_features.py --raw "$HRGUARD_DATA" \
@@ -139,6 +141,7 @@ python scripts/10_outage_peak.py        # peak underestimation inside gaps
 | --- | --- | --- |
 | `01` | `outputs/evidence/raw_audit_dev.json` | `summary.state_counts` — participants with a missing required file are marked, not dropped |
 | `02` | `outputs/evidence/window_probe_dev.json` | `bad10` and `watch_ok` are the numerator and denominator of the wrong-output count |
+| `04` | `outputs/evidence/pivot/endpoint_audit_windows.csv` | on the development cohort: 24,924 windows, 726 wrong, 2,723 no-output, ratio 0.210496 |
 | `06` | `outputs/evidence/v1_6/v1_6_dev_verify.json` | `state == "DEV_VERIFY_OK"`; `layer1_estimand_layer.all_pass == true`; `layer2_window_layer.mismatches[*].n_differing == 0` |
 | `11` | `outputs/V1_7_CONFIRMATION_RESULT.json` | reproduces the committed record byte for byte from committed artefacts |
 | `12` | `outputs/evidence/v1_7/v1_7_independent_verification.json` | independent recomputation of the same ratio from the held-out files, when you have authorised access to them |
