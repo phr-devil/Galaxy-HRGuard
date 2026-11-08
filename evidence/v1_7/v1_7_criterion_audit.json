@@ -1,0 +1,456 @@
+{
+  "document": "v1.7 audit of the confirmation criteria themselves: E1's false-positive evidence re-derived with a corrected generative model, and E2's criterion replaced by an exact participant-level sign-flip test with an explicit credibility rule",
+  "date": "2026-11-04",
+  "read_only": true,
+  "sealed_files_read": [],
+  "alpha": 0.05,
+  "dev_cohort": {
+    "participants": 16,
+    "n_windows_total": 24924,
+    "n_A_total": 22201,
+    "n_refused_total": 2723,
+    "n_wrong_total": 726
+  },
+  "E1_denominator_audit": {
+    "definition_in_the_runner": "pooled supply share = n_wrong / (n_wrong + n_refused), where n_refused counts windows with a valid Polar reference and no usable watch value (watch_missing = ref_ok & ~watch_ok)",
+    "universe_windows": 24924,
+    "n_A_device_output_valid": 22201,
+    "n_wrong_value": 726,
+    "n_refused": 2723,
+    "n_unreliable_denominator": 3449,
+    "n_correct_within_A": 21475,
+    "partition_check": "n_correct + n_wrong + n_refused == universe",
+    "partition_sums_to_universe": true,
+    "pooled_supply_share": 0.2104957958828646,
+    "unreliable_share_of_universe": 0.13838067725886696,
+    "manuscript_numbers_checked": {
+      "21.05%": true,
+      "78.95%": true,
+      "726": true,
+      "2723": true,
+      "3449": true,
+      "24924": true,
+      "13.84%": true
+    },
+    "verdict": "E1's denominator and every headline number in the manuscript table 1 are consistent with the frozen runner. NO CHANGE to the E1 denominator."
+  },
+  "E1_criterion_operating_characteristics": {
+    "v1_6_model_that_was_wrong": {
+      "what_v1_6_drew": "k_wrong ~ Binomial(n_A, true_share) and then reported the realised share as k/(k + n_refused)",
+      "consequence": "for the DEV cohort this maps 'true_share = 0.50' onto a realised share of about 0.85, so the reported false-positive rate of 0.0 was the rate at a true share of 0.85, not 0.50",
+      "status": "WITHDRAWN"
+    },
+    "corrected_model": "per-participant error rates are scaled so that the realised pooled share equals the target; n_A, n_refused and the participant-level error rate heterogeneity are inherited from DEV",
+    "rows": [
+      {
+        "n": 4,
+        "target_true_share": 0.5,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.499934693852705,
+        "rule_fired_rate": 0.4925,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 4,
+        "target_true_share": 0.5,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.4997668081435382,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.99975
+      },
+      {
+        "n": 4,
+        "target_true_share": 0.55,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.549912774436292,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 4,
+        "target_true_share": 0.55,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.549885226713715,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.99925
+      },
+      {
+        "n": 4,
+        "target_true_share": 0.6,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.5999783257350877,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 4,
+        "target_true_share": 0.6,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.5999314452431674,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.9995
+      },
+      {
+        "n": 4,
+        "target_true_share": 0.7,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.6989412964157158,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 4,
+        "target_true_share": 0.7,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.6987228609720186,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.99925
+      },
+      {
+        "n": 4,
+        "target_true_share": 0.2104957958828646,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.2102049835576254,
+        "rule_fired_rate": 1.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 4,
+        "target_true_share": 0.2104957958828646,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.210333358283952,
+        "rule_fired_rate": 1.0,
+        "ci_coverage_of_the_true_share": 0.9965
+      },
+      {
+        "n": 5,
+        "target_true_share": 0.5,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.5000923154621775,
+        "rule_fired_rate": 0.488,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 5,
+        "target_true_share": 0.5,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.49990536570112715,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 1.0
+      },
+      {
+        "n": 5,
+        "target_true_share": 0.55,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.5498497682514429,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 5,
+        "target_true_share": 0.55,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.5499547194443708,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.99975
+      },
+      {
+        "n": 5,
+        "target_true_share": 0.6,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.6000288775891311,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 5,
+        "target_true_share": 0.6,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.5997857835830914,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 1.0
+      },
+      {
+        "n": 5,
+        "target_true_share": 0.7,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.6981224473783686,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 5,
+        "target_true_share": 0.7,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.6983372099198811,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 1.0
+      },
+      {
+        "n": 5,
+        "target_true_share": 0.2104957958828646,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.21039555497556323,
+        "rule_fired_rate": 1.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 5,
+        "target_true_share": 0.2104957958828646,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.2103052009876049,
+        "rule_fired_rate": 1.0,
+        "ci_coverage_of_the_true_share": 0.99875
+      },
+      {
+        "n": 6,
+        "target_true_share": 0.5,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.5000194473466156,
+        "rule_fired_rate": 0.4875,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 6,
+        "target_true_share": 0.5,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.49990710616414896,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 1.0
+      },
+      {
+        "n": 6,
+        "target_true_share": 0.55,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.5498984450212302,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 6,
+        "target_true_share": 0.55,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.5498525912821673,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 1.0
+      },
+      {
+        "n": 6,
+        "target_true_share": 0.6,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.5998899992693107,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 6,
+        "target_true_share": 0.6,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.5999314382927339,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 1.0
+      },
+      {
+        "n": 6,
+        "target_true_share": 0.7,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.6976158791670367,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 6,
+        "target_true_share": 0.7,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.6979381453740727,
+        "rule_fired_rate": 0.0,
+        "ci_coverage_of_the_true_share": 1.0
+      },
+      {
+        "n": 6,
+        "target_true_share": 0.2104957958828646,
+        "rule": "point",
+        "replicates": 4000,
+        "realised_share_mean": 0.21031964791761432,
+        "rule_fired_rate": 1.0,
+        "ci_coverage_of_the_true_share": 0.0
+      },
+      {
+        "n": 6,
+        "target_true_share": 0.2104957958828646,
+        "rule": "ci",
+        "replicates": 4000,
+        "realised_share_mean": 0.2104537602688261,
+        "rule_fired_rate": 1.0,
+        "ci_coverage_of_the_true_share": 1.0
+      }
+    ],
+    "reading": "the point-estimate rule 'share < 0.50' is a benchmark comparison, not a controlled test: at a true share of exactly 0.50 it fires about half the time, because the estimator is unbiased at the benchmark. It never fires when the true share is 0.55 or above. The interval rule 'the whole 95% interval lies below 0.50' is the variant with an actual confidence statement; its coverage column records how often the interval actually contains the true share, which is the calibration check that the point rule never had."
+  },
+  "E2_exact_test_attainability": {
+    "test": "exact one-sided sign-flip permutation test on the participant-level paired log-odds deltas; all 2^n sign patterns are enumerated, so there is no Monte-Carlo error",
+    "companion": "exact one-sided binomial sign test on the number of positive deltas (no magnitude symmetry assumed)",
+    "alpha": 0.05,
+    "by_n": {
+      "4": {
+        "smallest_attainable_one_sided_p": 0.0625,
+        "all_positive_config_p": 0.0625,
+        "one_negative_config_p": 0.3125,
+        "can_reject_at_alpha_0p05": false,
+        "rejection_requires": "all n deltas positive"
+      },
+      "5": {
+        "smallest_attainable_one_sided_p": 0.03125,
+        "all_positive_config_p": 0.03125,
+        "one_negative_config_p": 0.1875,
+        "can_reject_at_alpha_0p05": true,
+        "rejection_requires": "all n deltas positive"
+      },
+      "6": {
+        "smallest_attainable_one_sided_p": 0.015625,
+        "all_positive_config_p": 0.015625,
+        "one_negative_config_p": 0.109375,
+        "can_reject_at_alpha_0p05": true,
+        "rejection_requires": "all n deltas positive, or n-1 positive with a single small negative"
+      }
+    },
+    "key_fact": "at n = 4 the smallest attainable one-sided p is 1/16 = 0.0625, which is ABOVE alpha = 0.05. No one-sided exact test can reject at n = 4 at all."
+  },
+  "E2_power_at_the_DEV_participant_distribution": {
+    "method": "resample n participant deltas with replacement from the 16 observed DEV deltas; the participant is the independent unit and the real sign pattern (14 of 16 positive) is preserved",
+    "rows": [
+      {
+        "n": 4,
+        "replicates": 20000,
+        "power_exact_signflip": 0.0,
+        "power_exact_sign_test": 0.0,
+        "power_bootstrap_percentile_criterion": 0.84495,
+        "analytic_all_positive_probability": 0.586181640625
+      },
+      {
+        "n": 5,
+        "replicates": 20000,
+        "power_exact_signflip": 0.5176,
+        "power_exact_sign_test": 0.5176,
+        "power_bootstrap_percentile_criterion": 0.93405,
+        "analytic_all_positive_probability": 0.512908935546875
+      },
+      {
+        "n": 6,
+        "replicates": 20000,
+        "power_exact_signflip": 0.82405,
+        "power_exact_sign_test": 0.45,
+        "power_bootstrap_percentile_criterion": 0.969,
+        "analytic_all_positive_probability": 0.4487953186035156
+      }
+    ],
+    "reading": "the exact tests are far more conservative than the bootstrap-percentile criterion: at n = 5 the exact sign-flip test rejects only when all five deltas are positive, which happens about half the time."
+  },
+  "E2_type_I_error_under_a_symmetric_null": {
+    "method": "the observed DEV deltas are sign-randomised so that the cohort-level gradient is zero, then n deltas are drawn; this is the null the v1.6 criterion was never checked against on a properly calibrated scale",
+    "rows": [
+      {
+        "n": 4,
+        "replicates": 20000,
+        "false_positive_bootstrap_percentile": 0.18055,
+        "false_positive_exact_signflip": 0.0,
+        "false_positive_exact_sign_test": 0.0,
+        "nominal_alpha": 0.05,
+        "exact_test_attainable_levels": {}
+      },
+      {
+        "n": 5,
+        "replicates": 20000,
+        "false_positive_bootstrap_percentile": 0.1594,
+        "false_positive_exact_signflip": 0.0315,
+        "false_positive_exact_sign_test": 0.0315,
+        "nominal_alpha": 0.05,
+        "exact_test_attainable_levels": {
+          "1": 0.03125
+        }
+      },
+      {
+        "n": 6,
+        "replicates": 20000,
+        "false_positive_bootstrap_percentile": 0.1316,
+        "false_positive_exact_signflip": 0.0432,
+        "false_positive_exact_sign_test": 0.01545,
+        "nominal_alpha": 0.05,
+        "exact_test_attainable_levels": {
+          "1": 0.015625,
+          "2": 0.03125,
+          "3": 0.046875
+        }
+      }
+    ],
+    "reading": "the bootstrap-percentile criterion used by v1.6 has a false-positive rate several times the nominal alpha, which is why it cannot serve as a confirmatory criterion. The exact tests are calibrated by construction."
+  },
+  "E2_credibility_rule": {
+    "pre_registered_before_any_sealed_quantity_exists": true,
+    "rule": "E2 may remain a CONFIRMATORY criterion only if ALL of: (1) the Type I error at the null is controlled at alpha = 0.05 (not approximated); (2) the test is not degenerate at the evaluable n, i.e. the smallest attainable one-sided p is <= alpha; (3) the power against the DEV participant distribution is at least 0.80. Otherwise E2 becomes DESCRIPTIVE.",
+    "evaluation_at_n_5": {
+      "condition_1_type_I_controlled": true,
+      "condition_2_not_degenerate": true,
+      "condition_3_power_at_least_0p80": false,
+      "power_observed": 0.5176
+    },
+    "evaluation_at_n_4": {
+      "condition_1_type_I_controlled": true,
+      "condition_2_not_degenerate": false,
+      "condition_3_power_at_least_0p80": false,
+      "power_observed": 0.0
+    },
+    "decision": "E2 IS DEMOTED TO DESCRIPTIVE.",
+    "reasoning": [
+      "at n = 4 the exact test is degenerate: its smallest attainable one-sided p is 0.0625 > 0.05, so it can never reject, whatever the data show.",
+      "at n = 5 the exact test is valid but weak: rejection requires all five participant deltas to be positive, giving a power of about 0.52 against the DEV participant distribution, far below the 0.80 the rule demands.",
+      "the only criterion that would be strong enough is the bootstrap-percentile interval, and that criterion's Type I error is several times the nominal alpha, so it cannot be used for a confirmation claim.",
+      "therefore no admissible one-sided test at n <= 5 can carry the activity component as a confirmatory criterion. E2 is reported as a DESCRIPTIVE quantity: point estimate, interval, per-participant deltas, and the exact p-value, with the explicit statement that a null result is UNTESTED rather than refuted.",
+      "the rule was fixed before any SEALED value was read and is not revisited after seeing the confirmation result."
+    ]
+  },
+  "E1_criterion_replacement": {
+    "v1_6_criterion": "the point estimate of the pooled supply share is below 0.50",
+    "why_it_is_not_a_test": "it is a benchmark comparison against an unbiased estimator, so at a true share of exactly 0.50 it fires roughly half the time; it carries no confidence statement of its own",
+    "v1_7_criterion": "the 95% participant-level bootstrap interval of the pooled supply share lies ENTIRELY BELOW 0.50 => SUPPORTED (refusal dominance confirmed with a confidence statement). If the interval contains or exceeds 0.50 => the supply share is reported as cohort-dependent and the component is recorded as UNTESTED AGAINST THE BENCHMARK, never as refuted.",
+    "why_this_is_a_correction_not_a_loosening": "the replacement is STRICTER than the point rule, and it is fixed before the SEALED measurement exists",
+    "fallback_for_degenerate_bootstrap": "if the participant-level bootstrap cannot produce a finite interval (fewer than two evaluable participants), the component is reported as descriptive and the paper label is CONFIRMATION_INCONCLUSIVE"
+  },
+  "verdict": {
+    "E1_denominator": "UNCHANGED and verified against every headline number in the manuscript",
+    "E1_criterion": "REPLACED by an interval-based rule (stricter, and it carries an actual confidence statement)",
+    "E2_criterion": "REPLACED by an exact sign-flip test, then DEMOTED TO DESCRIPTIVE because no admissible one-sided test at n <= 5 satisfies the pre-registered credibility rule",
+    "E3": "unchanged, descriptive only",
+    "E4": "unchanged, descriptive only (v1.6 correction stands)",
+    "E5": "unchanged, descriptive only, no eta-squared in the paper",
+    "paper_label_consequence": "with E2 demoted, the confirmation can only support the SUPPLY BOUNDARY component (E1) and the descriptive components. The activity component is reported as a within-person conditional observation with an exact p-value, and the manuscript must say the held-out cohort was not powered to test it."
+  }
+}

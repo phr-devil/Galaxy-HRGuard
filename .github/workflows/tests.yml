@@ -1,0 +1,75 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  unit:
+    name: unit tests (py${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install -U pip
+          python -m pip install -e ".[test]"
+
+      - name: Import check
+        run: |
+          python -c "import hrguard, hrguard.paths; print('hrguard', hrguard.__version__)"
+          python -c "import hrguard.raw, hrguard.windows, hrguard.signals, hrguard.endpoint, hrguard.features, hrguard.measure, hrguard.online"
+          python -c "import hrguard.composition, hrguard.blocks, hrguard.within, hrguard.outage"
+          python -c "import hrguard.prepare, hrguard.preflight, hrguard.alignment, hrguard.macro_verify"
+
+      - name: Unit tests
+        run: python -m pytest -q
+
+  assembly:
+    name: headline record assembly
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install -U pip
+          python -m pip install -e ".[test]"
+
+      # The assembly step needs no data: it re-derives the committed headline
+      # record from the committed aggregate artefacts.
+      - name: Rebuild and compare
+        run: |
+          python scripts/11_build_result.py
+          python - <<'PY'
+          import json, pathlib, sys
+          new = json.loads(pathlib.Path("outputs/V1_7_CONFIRMATION_RESULT.json").read_text())
+          old = json.loads(pathlib.Path("evidence/V1_7_CONFIRMATION_RESULT.json").read_text())
+          def strip(d):
+              if isinstance(d, dict):
+                  return {k: strip(v) for k, v in d.items() if k not in {"generated_at", "output_path"}}
+              if isinstance(d, list):
+                  return [strip(v) for v in d]
+              return d
+          if strip(new) != strip(old):
+              print("MISMATCH between rebuilt and committed record")
+              sys.exit(1)
+          print("assembled record matches committed record")
+          PY

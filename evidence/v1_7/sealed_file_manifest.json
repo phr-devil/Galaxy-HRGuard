@@ -1,0 +1,266 @@
+{
+  "state": "V1_7_SEALED_EXTRACTED_NO_FIT",
+  "authorised_by_user_on": "2026-11-04",
+  "authorisation_scope": "A1 unseal + A2 local extraction only",
+  "source_zip": "<archive>/GalaxyPPG.zip",
+  "source_zip_bytes": 481594233,
+  "source_zip_sha256": "3f69385eb9955dc239800bd87c0a51c12e545f16d9de4ef9572589bf41523975",
+  "sealed_subjects": [
+    "P08",
+    "P13",
+    "P17",
+    "P19",
+    "P20",
+    "P23"
+  ],
+  "extracted_bytes_total": 23931925,
+  "extracted_files_total": 23,
+  "acc_extracted": true,
+  "acc_rationale": "ACC does not enter any frozen estimand, but the inherited inclusion rule G-EVAL clause (1) requires all five raw files present and label_participant() iterates the full FILES map; leaving ACC out would have silently converted every SEALED participant to DATA_NOT_EVALUABLE on a bookkeeping technicality. Extracting ACC satisfies the STRICTER rule.",
+  "raw_sealed_root": "<local>/raw_sealed_v1_7",
+  "participants": {
+    "P08": {
+      "file_count": 4,
+      "missing": [
+        "GalaxyWatch/HR.csv"
+      ],
+      "evaluable": false,
+      "reason_if_not_evaluable": "MISSING_FILE:GalaxyWatch/HR.csv",
+      "files": [
+        {
+          "path": "PolarH10/HR.csv",
+          "bytes": 86120,
+          "zip_crc": "e51f5d87",
+          "sha256": "4703bab74101d9e63567c32585d9e44534368f24c13937bcb9a7f9724ff35134"
+        },
+        {
+          "path": "Event.csv",
+          "bytes": 1248,
+          "zip_crc": "8b295101",
+          "sha256": "e0a1bc7cd7fa382a262f7a669161c0d71713ed366d3cdfb29050f4adbfecd0cc"
+        },
+        {
+          "path": "GalaxyWatch/PPG.csv",
+          "bytes": 3648977,
+          "zip_crc": "d7ee0451",
+          "sha256": "afab1ba2e10d5638c3d5fa122d5d74aec7a3b752448f8914ef1bdc7774b11c65"
+        },
+        {
+          "path": "GalaxyWatch/ACC.csv",
+          "bytes": 7876568,
+          "zip_crc": "a9013889",
+          "sha256": "331982da3be9ce4e3994d5cedf74e720e8b147120b9cb4a441acce348da48706",
+          "role": "NOT_AN_ESTIMAND_INPUT"
+        }
+      ]
+    },
+    "P13": {
+      "file_count": 5,
+      "missing": [],
+      "evaluable": true,
+      "reason_if_not_evaluable": null,
+      "files": [
+        {
+          "path": "GalaxyWatch/HR.csv",
+          "bytes": 196015,
+          "zip_crc": "1297985b",
+          "sha256": "1a097ebf5f42b8128e3c55f2baa1226eb42b073ec8e08bbb7d5894f60efe2ada"
+        },
+        {
+          "path": "PolarH10/HR.csv",
+          "bytes": 93572,
+          "zip_crc": "4ff874c4",
+          "sha256": "ec33a00303a19f94a7edea9da585cb89db593fae87d1dba8c5fd66d3cc4369d2"
+        },
+        {
+          "path": "Event.csv",
+          "bytes": 1248,
+          "zip_crc": "99d0ef7d",
+          "sha256": "3346b9ce6c8faa82f9626b2bc1f119375dde322f71374ef5ccbe96aadf14d030"
+        },
+        {
+          "path": "GalaxyWatch/PPG.csv",
+          "bytes": 3768335,
+          "zip_crc": "a6aa7b5e",
+          "sha256": "be4622a519df5f86a83b49a107682f0a3941bf2d36f61fa6e882643d1ed8da38"
+        },
+        {
+          "path": "GalaxyWatch/ACC.csv",
+          "bytes": 8234812,
+          "zip_crc": "36372bc9",
+          "sha256": "f8d9dad7117b1413993b7ce46d7c34045c4e3a876858ce26258db9004afa236f",
+          "role": "NOT_AN_ESTIMAND_INPUT"
+        }
+      ]
+    },
+    "P17": {
+      "file_count": 5,
+      "missing": [],
+      "evaluable": true,
+      "reason_if_not_evaluable": null,
+      "files": [
+        {
+          "path": "GalaxyWatch/HR.csv",
+          "bytes": 195507,
+          "zip_crc": "17086f4d",
+          "sha256": "d27ee1a73a90e87ecb2d193af7a4acbf6cf0ae1984a23ebf1af5233121bdfb4d"
+        },
+        {
+          "path": "PolarH10/HR.csv",
+          "bytes": 86625,
+          "zip_crc": "3001ad41",
+          "sha256": "9629ba817b9aaacac5b2026445ecdd2761d8954fd1f5dee279dfa467877870fa"
+        },
+        {
+          "path": "Event.csv",
+          "bytes": 1248,
+          "zip_crc": "675c54d4",
+          "sha256": "fa5dba5358b199061c87707d8f7fa2cc9803719ccf5813095292ad872d8f123b"
+        },
+        {
+          "path": "GalaxyWatch/PPG.csv",
+          "bytes": 3790835,
+          "zip_crc": "9070a94d",
+          "sha256": "ab42578f17d899e458e204c3d2c1a0749d3c2a74147c0bfb3cc575cf0d1add22"
+        },
+        {
+          "path": "GalaxyWatch/ACC.csv",
+          "bytes": 8267465,
+          "zip_crc": "bbe54334",
+          "sha256": "76179a77712408b3154e8c6869866f9b32b4339be3daae05648b88d99029eb13",
+          "role": "NOT_AN_ESTIMAND_INPUT"
+        }
+      ]
+    },
+    "P19": {
+      "file_count": 5,
+      "missing": [],
+      "evaluable": true,
+      "reason_if_not_evaluable": null,
+      "files": [
+        {
+          "path": "GalaxyWatch/HR.csv",
+          "bytes": 187332,
+          "zip_crc": "815c15b1",
+          "sha256": "656041033b58f75386c60e782a058f7897e2b715be4e8dec9dca5f4203ff8ce8"
+        },
+        {
+          "path": "PolarH10/HR.csv",
+          "bytes": 91232,
+          "zip_crc": "c3e9951d",
+          "sha256": "28b80e90364149545da28686f3a2aa0f3799834676f1338b62984561aafa6ec7"
+        },
+        {
+          "path": "Event.csv",
+          "bytes": 1248,
+          "zip_crc": "862a0481",
+          "sha256": "a4b047f689db629368746d3a22261a104a24f5822e610545e3c3849a79455b1f"
+        },
+        {
+          "path": "GalaxyWatch/PPG.csv",
+          "bytes": 3755735,
+          "zip_crc": "dc9c5780",
+          "sha256": "d2aaf9f2c0a25b87c55288ae4a21c1a4e6c88259f9e712e7111b508257710734"
+        },
+        {
+          "path": "GalaxyWatch/ACC.csv",
+          "bytes": 8250888,
+          "zip_crc": "c8c5c01d",
+          "sha256": "88018cc778cf8dfb37778c217445d4fa44fd7c07b4744d67f7868d079a15d2f6",
+          "role": "NOT_AN_ESTIMAND_INPUT"
+        }
+      ]
+    },
+    "P20": {
+      "file_count": 5,
+      "missing": [],
+      "evaluable": true,
+      "reason_if_not_evaluable": null,
+      "files": [
+        {
+          "path": "GalaxyWatch/HR.csv",
+          "bytes": 190656,
+          "zip_crc": "827572fe",
+          "sha256": "bfa1720cd9bbbd4218bc2abea9a5f006db69930e264773fc266256f2c8568321"
+        },
+        {
+          "path": "PolarH10/HR.csv",
+          "bytes": 96958,
+          "zip_crc": "95ad422d",
+          "sha256": "a72ca5b936cd52bf36bf6228914526689276922fb4553f09f19b493ebf9862de"
+        },
+        {
+          "path": "Event.csv",
+          "bytes": 1248,
+          "zip_crc": "064d04e4",
+          "sha256": "04761c3c636a84133cdd1d9fe4d5ce3e1cabedbc859293a54365e641ab8b79c7"
+        },
+        {
+          "path": "GalaxyWatch/PPG.csv",
+          "bytes": 3734127,
+          "zip_crc": "bb92be2f",
+          "sha256": "908c23bc373e8470039f55332546ce5a661d418dd7902a6a92581af5aec77183"
+        },
+        {
+          "path": "GalaxyWatch/ACC.csv",
+          "bytes": 8091590,
+          "zip_crc": "fec6ace5",
+          "sha256": "64e414af02542f98da76c431f7b60b47c6d31c02f923792d70ad543278113dd0",
+          "role": "NOT_AN_ESTIMAND_INPUT"
+        }
+      ]
+    },
+    "P23": {
+      "file_count": 5,
+      "missing": [],
+      "evaluable": true,
+      "reason_if_not_evaluable": null,
+      "files": [
+        {
+          "path": "GalaxyWatch/HR.csv",
+          "bytes": 188025,
+          "zip_crc": "4e4b2dc8",
+          "sha256": "9b737879460834e533fbf6ecc45cbb1a6998f8b3aa5c84e4440b4af1d6cc7997"
+        },
+        {
+          "path": "PolarH10/HR.csv",
+          "bytes": 92851,
+          "zip_crc": "a2962c54",
+          "sha256": "7fdde0f877dc59e9c5912bf3e335a31fc0bd926afc28505e97d1d0ad54a1541e"
+        },
+        {
+          "path": "Event.csv",
+          "bytes": 1248,
+          "zip_crc": "8db07529",
+          "sha256": "00c99160b5f7013816dbf633ba040c6fa886f54103f0978442f0d8dec695976f"
+        },
+        {
+          "path": "GalaxyWatch/PPG.csv",
+          "bytes": 3721535,
+          "zip_crc": "fea8d593",
+          "sha256": "1d38ab1aadeda36d341d56542a0fe03c589dd8711bf9ec468d5a306136adc3e2"
+        },
+        {
+          "path": "GalaxyWatch/ACC.csv",
+          "bytes": 8038648,
+          "zip_crc": "62671e45",
+          "sha256": "725b054a91b801b19a24d0caa0a6e09c7a77dcc2369b0ef00252b6bb3e7b995a",
+          "role": "NOT_AN_ESTIMAND_INPUT"
+        }
+      ]
+    }
+  },
+  "estimated_extra_bytes": 48759971,
+  "steps_log": [
+    {
+      "step": "3a",
+      "action": "extract four estimand files",
+      "bytes": 23930000
+    },
+    {
+      "step": "3b",
+      "action": "extract ACC to satisfy G-EVAL clause (1)",
+      "files": 6
+    }
+  ]
+}

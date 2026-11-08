@@ -1,0 +1,173 @@
+{
+  "stage": "preflight",
+  "state": "SEALED_PREFLIGHT_WRITTEN",
+  "written_before_any_label": true,
+  "rule": "closed candidate set {raw:0, author_minus_9h:-32400000}; score = fraction of Polar timestamps inside the watch PPG timestamp range; PASS iff best >= 0.75 AND (best-second) >= 0.30 AND res_lo_s in [-578.8,+109.1] AND res_hi_s in [-509.4,+130.9]",
+  "prohibition": "no reference-HR error may be used to choose or justify an offset, and no sibling-project HR-derived quantity may be used to accept or reject a participant",
+  "per_participant": {
+    "P08": {
+      "state": "DATA_NOT_EVALUABLE",
+      "reason": "missing required raw file(s): GalaxyWatch/HR.csv",
+      "missing": [
+        "GalaxyWatch/HR.csv"
+      ],
+      "rule": "G-EVAL clause (1): all five raw files present",
+      "note": "a missing file makes 'the device emitted nothing' indistinguishable from 'the file was not recorded'; it is NOT counted as a refusal and enters neither a numerator nor a denominator"
+    },
+    "P13": {
+      "state": "ALIGNMENT_PASS",
+      "rule_applied": "timestamp overlap only; reference-HR error never used",
+      "decision": {
+        "candidate_overlap_fraction": {
+          "raw": 0.0,
+          "author_minus_9h": 0.9557149925779317
+        },
+        "selected_offset_ms": -32400000,
+        "selected_recipe": "author_minus_9h",
+        "status": "UNIQUE_TIME_RANGE_MATCH",
+        "rule": "best >= 0.75 AND (best - second) >= 0.30, timestamp overlap only"
+      },
+      "guard": {
+        "res_lo_s": -178.384,
+        "res_hi_s": -19.536,
+        "pass_window_res_lo_s": [
+          -578.8,
+          109.1
+        ],
+        "pass_window_res_hi_s": [
+          -509.4,
+          130.9
+        ],
+        "passed": true,
+        "reason": ""
+      },
+      "reason": ""
+    },
+    "P17": {
+      "state": "ALIGNMENT_PASS",
+      "rule_applied": "timestamp overlap only; reference-HR error never used",
+      "decision": {
+        "candidate_overlap_fraction": {
+          "raw": 0.0,
+          "author_minus_9h": 0.9984512132163139
+        },
+        "selected_offset_ms": -32400000,
+        "selected_recipe": "author_minus_9h",
+        "status": "UNIQUE_TIME_RANGE_MATCH",
+        "rule": "best >= 0.75 AND (best - second) >= 0.30, timestamp overlap only"
+      },
+      "guard": {
+        "res_lo_s": -5.024,
+        "res_hi_s": -37.626,
+        "pass_window_res_lo_s": [
+          -578.8,
+          109.1
+        ],
+        "pass_window_res_hi_s": [
+          -509.4,
+          130.9
+        ],
+        "passed": true,
+        "reason": ""
+      },
+      "reason": ""
+    },
+    "P19": {
+      "state": "ALIGNMENT_PASS",
+      "rule_applied": "timestamp overlap only; reference-HR error never used",
+      "decision": {
+        "candidate_overlap_fraction": {
+          "raw": 0.0,
+          "author_minus_9h": 0.953090096798213
+        },
+        "selected_offset_ms": -32400000,
+        "selected_recipe": "author_minus_9h",
+        "status": "UNIQUE_TIME_RANGE_MATCH",
+        "rule": "best >= 0.75 AND (best - second) >= 0.30, timestamp overlap only"
+      },
+      "guard": {
+        "res_lo_s": -189.383,
+        "res_hi_s": -33.689,
+        "pass_window_res_lo_s": [
+          -578.8,
+          109.1
+        ],
+        "pass_window_res_hi_s": [
+          -509.4,
+          130.9
+        ],
+        "passed": true,
+        "reason": ""
+      },
+      "reason": ""
+    },
+    "P20": {
+      "state": "ALIGNMENT_PASS",
+      "rule_applied": "timestamp overlap only; reference-HR error never used",
+      "decision": {
+        "candidate_overlap_fraction": {
+          "raw": 0.0,
+          "author_minus_9h": 0.8779700115340254
+        },
+        "selected_offset_ms": -32400000,
+        "selected_recipe": "author_minus_9h",
+        "status": "UNIQUE_TIME_RANGE_MATCH",
+        "rule": "best >= 0.75 AND (best - second) >= 0.30, timestamp overlap only"
+      },
+      "guard": {
+        "res_lo_s": -527.001,
+        "res_hi_s": -38.356,
+        "pass_window_res_lo_s": [
+          -578.8,
+          109.1
+        ],
+        "pass_window_res_hi_s": [
+          -509.4,
+          130.9
+        ],
+        "passed": true,
+        "reason": ""
+      },
+      "reason": ""
+    },
+    "P23": {
+      "state": "ALIGNMENT_PASS",
+      "rule_applied": "timestamp overlap only; reference-HR error never used",
+      "decision": {
+        "candidate_overlap_fraction": {
+          "raw": 0.0,
+          "author_minus_9h": 0.939693524468611
+        },
+        "selected_offset_ms": -32400000,
+        "selected_recipe": "author_minus_9h",
+        "status": "UNIQUE_TIME_RANGE_MATCH",
+        "rule": "best >= 0.75 AND (best - second) >= 0.30, timestamp overlap only"
+      },
+      "guard": {
+        "res_lo_s": -243.869,
+        "res_hi_s": -28.373,
+        "pass_window_res_lo_s": [
+          -578.8,
+          109.1
+        ],
+        "pass_window_res_hi_s": [
+          -509.4,
+          130.9
+        ],
+        "passed": true,
+        "reason": ""
+      },
+      "reason": ""
+    }
+  },
+  "evaluable": [
+    "P13",
+    "P17",
+    "P19",
+    "P20",
+    "P23"
+  ],
+  "not_evaluable": {
+    "P08": "missing required raw file(s): GalaxyWatch/HR.csv"
+  }
+}

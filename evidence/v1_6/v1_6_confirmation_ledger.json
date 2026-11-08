@@ -1,0 +1,265 @@
+{
+  "stage": "confirm",
+  "state": "SEALED_CONFIRMATION_COMPLETED",
+  "run_type": "MEASUREMENT ONLY -- zero fitting, zero threshold calibration, zero hyper-parameter search",
+  "one_shot": true,
+  "evaluable_n": 5,
+  "excluded": {
+    "P08": {
+      "state": "DATA_NOT_EVALUABLE",
+      "reason": "missing required raw file(s): GalaxyWatch/HR.csv",
+      "enters_numerator": false,
+      "enters_denominator": false
+    }
+  },
+  "estimands": {
+    "n_evaluable": 5,
+    "participants": [
+      "P13",
+      "P17",
+      "P19",
+      "P20",
+      "P23"
+    ],
+    "per_participant": {
+      "P13": {
+        "n_windows": 1484,
+        "n_reference_valid": 1484,
+        "n_A": 1136,
+        "n_wrong": 17,
+        "n_refused": 348,
+        "n_unreliable": 365,
+        "supply_share": 0.04657534246575343,
+        "error_rate_A": 0.014964788732394365,
+        "refusal_rate_all": 0.23450134770889489
+      },
+      "P17": {
+        "n_windows": 1527,
+        "n_reference_valid": 1527,
+        "n_A": 1457,
+        "n_wrong": 3,
+        "n_refused": 70,
+        "n_unreliable": 73,
+        "supply_share": 0.0410958904109589,
+        "error_rate_A": 0.002059025394646534,
+        "refusal_rate_all": 0.045841519318926
+      },
+      "P19": {
+        "n_windows": 1523,
+        "n_reference_valid": 1523,
+        "n_A": 1365,
+        "n_wrong": 65,
+        "n_refused": 158,
+        "n_unreliable": 223,
+        "supply_share": 0.2914798206278027,
+        "error_rate_A": 0.047619047619047616,
+        "refusal_rate_all": 0.10374261326329613
+      },
+      "P20": {
+        "n_windows": 1662,
+        "n_reference_valid": 1662,
+        "n_A": 1495,
+        "n_wrong": 12,
+        "n_refused": 167,
+        "n_unreliable": 179,
+        "supply_share": 0.0670391061452514,
+        "error_rate_A": 0.008026755852842809,
+        "refusal_rate_all": 0.10048134777376655
+      },
+      "P23": {
+        "n_windows": 1517,
+        "n_reference_valid": 1517,
+        "n_A": 1194,
+        "n_wrong": 50,
+        "n_refused": 323,
+        "n_unreliable": 373,
+        "supply_share": 0.13404825737265416,
+        "error_rate_A": 0.04187604690117253,
+        "refusal_rate_all": 0.2129202373104812
+      }
+    },
+    "E1_pooled_supply_share": 0.12118713932399011,
+    "E1_pooled_supply_share_raw": {
+      "n_wrong_value_windows": 147,
+      "n_refused_windows": 1066,
+      "n_unreliable_windows": 1213,
+      "numerator_definition": "windows where the device reported a value that differs from the Polar reference by > 10 bpm",
+      "denominator_definition": "all unreliable reference-valid windows, i.e. wrong-value plus refused"
+    },
+    "E1b_subject_equal_supply_share": 0.11604768340448413,
+    "E2_within_person_activity_gradient": 4.381814116410758,
+    "E2_within_person_activity_gradient_raw": {
+      "per_participant": {
+        "P13": 5.2448310575966035,
+        "P17": 1.89308341286094,
+        "P19": 2.2530803878867447,
+        "P20": 5.371741085283314,
+        "P23": 7.146334638426186
+      },
+      "contrast": "log-odds(pure motion: walking/jogging/running) - log-odds(quiet: baseline/adaptation/meditation-1/meditation-2/screen-reading/mobile-typing)",
+      "caveat": "the protocol order is FIXED for every participant, so activity type and protocol position cannot be separated; this is a within-participant conditional contrast, NOT a causal effect of activity"
+    },
+    "E2b_positive_gradient_fraction": 1.0,
+    "E3_between_person_spread": 5.217057509771078,
+    "E3_raw": {
+      "per_participant_error_rate": {
+        "P13": 0.014964788732394365,
+        "P17": 0.002059025394646534,
+        "P19": 0.047619047619047616,
+        "P20": 0.008026755852842809,
+        "P23": 0.04187604690117253
+      },
+      "q25": 0.008026755852842809,
+      "q75": 0.04187604690117253,
+      "tier": "DESCRIPTIVE ONLY -- no quantitative heterogeneity claim is made from SEALED"
+    },
+    "E4_device_refusal_rate": 0.13949741307507296,
+    "E4_raw": {
+      "per_participant_refusal_rate": {
+        "P13": 0.23450134770889489,
+        "P17": 0.045841519318926,
+        "P19": 0.10374261326329613,
+        "P20": 0.10048134777376655,
+        "P23": 0.2129202373104812
+      }
+    },
+    "E5_eta2_participant_share": 0.3367752401311296,
+    "E5_detail": {
+      "eta2_participant": 0.3367752401311296,
+      "eta2_group": 0.2568691331807616,
+      "eta2_cell": 0.40635562668810893,
+      "sum": 1.0,
+      "orthogonal": true,
+      "n_cells": 20,
+      "construction": "cell-level (participant x activity group) k/n aggregation, Laplace-smoothed log-odds, unit-weighted ordinary two-way ANOVA",
+      "tier": "DESCRIPTIVE ONLY -- the cell term mixes interaction with binomial sampling error (one observation per cell) and the v1.5 permutation test could not separate it from noise (p = 0.6064)"
+    }
+  },
+  "participant_cluster_bootstrap": {
+    "E1": {
+      "ci95": [
+        0.04928909952606635,
+        0.21048321048321048
+      ],
+      "ci95_width": 0.16119411095714412,
+      "bootstrap_median": 0.12034078807241747,
+      "replicates": 8000
+    },
+    "E1b": {
+      "ci95": [
+        0.05157011300732125,
+        0.16902758154677805
+      ],
+      "ci95_width": 0.1174574685394568,
+      "bootstrap_median": 0.1282998277192923,
+      "replicates": 8000
+    },
+    "E2": {
+      "ci95": [
+        3.132020027786408,
+        6.36610788623945
+      ],
+      "ci95_width": 3.234087858453042,
+      "bootstrap_median": 4.385272039811595,
+      "replicates": 8000
+    },
+    "E2b": {
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "ci95_width": 0.0,
+      "bootstrap_median": 1.0,
+      "replicates": 8000
+    },
+    "E4": {
+      "ci95": [
+        0.0833551601186629,
+        0.1837213994275574
+      ],
+      "ci95_width": 0.10036623930889452,
+      "bootstrap_median": 0.13949741307507296,
+      "replicates": 8000
+    }
+  },
+  "criteria": {
+    "E1_pooled_supply_share": {
+      "point_estimate": 0.12118713932399011,
+      "ci95": [
+        0.04928909952606635,
+        0.21048321048321048
+      ],
+      "criterion": "the entire 95% participant-level bootstrap interval of the pooled supply share lies below 0.50",
+      "status": "SUPPORTED",
+      "reason": "the entire 95% interval lies below 0.50, so refusal dominance is confirmed with a confidence statement",
+      "tier": "PRIMARY / CONFIRMATORY"
+    },
+    "E2_within_person_activity_gradient": {
+      "point_estimate": 4.381814116410758,
+      "ci95": [
+        3.132020027786408,
+        6.36610788623945
+      ],
+      "exact_signflip_p_one_sided": 0.03125,
+      "exact_sign_test_p_one_sided": 0.03125,
+      "positive_fraction": 1.0,
+      "per_participant": {
+        "P13": 5.2448310575966035,
+        "P17": 1.89308341286094,
+        "P19": 2.2530803878867447,
+        "P20": 5.371741085283314,
+        "P23": 7.146334638426186
+      },
+      "criterion": "NONE -- DESCRIPTIVE",
+      "status": "DESCRIPTIVE",
+      "reason": "no admissible one-sided exact test at n <= 5 satisfies the pre-registered credibility rule; at n = 4 the smallest attainable one-sided p is 0.0625 > alpha = 0.05 and at n = 5 the exact test requires all five participant deltas to be positive (power about 0.52). A null result is UNTESTED, never refuted.",
+      "tier": "DESCRIPTIVE ONLY (v1.7 demotion)"
+    },
+    "E4_device_refusal_rate": {
+      "point_estimate": 0.13949741307507296,
+      "ci95": [
+        0.0833551601186629,
+        0.1837213994275574
+      ],
+      "per_participant": {
+        "P13": 0.23450134770889489,
+        "P17": 0.045841519318926,
+        "P19": 0.10374261326329613,
+        "P20": 0.10048134777376655,
+        "P23": 0.2129202373104812
+      },
+      "criterion": "NONE -- DESCRIPTIVE",
+      "status": "DESCRIPTIVE",
+      "reason": "the v1.6 correction stands: the tested null (rate = 0) is trivial, so the quantity is reported as a magnitude with an interval and per-participant values, with no significance claim",
+      "tier": "DESCRIPTIVE ONLY"
+    },
+    "E3_between_person_spread": {
+      "point_estimate": 5.217057509771078,
+      "ci95": null,
+      "ci95_note": "the participant-level bootstrap does not resample the quartile ratio, so no interval is claimed for E3; the per-participant conditional error rates are reported instead",
+      "per_participant": {
+        "P13": 0.014964788732394365,
+        "P17": 0.002059025394646534,
+        "P19": 0.047619047619047616,
+        "P20": 0.008026755852842809,
+        "P23": 0.04187604690117253
+      },
+      "criterion": "NONE -- DESCRIPTIVE",
+      "status": "DESCRIPTIVE",
+      "tier": "DESCRIPTIVE ONLY"
+    },
+    "E5_eta2_participant_share": {
+      "point_estimate": 0.3367752401311296,
+      "criterion": "NONE -- DESCRIPTIVE",
+      "status": "DESCRIPTIVE",
+      "note": "no eta-squared quantity is reported in the confirmation side of the paper; the v1.4 interaction effect size was withdrawn and the cell term is not separable from binomial sampling error",
+      "tier": "DESCRIPTIVE ONLY"
+    }
+  },
+  "paper_label": {
+    "label": "CONFIRMED_NARROW_CLAIM",
+    "reason": "the supply-boundary component is independently supported; the activity component is reported as a descriptive within-person observation because the held-out cohort was not powered to test it"
+  },
+  "n_boot": 8000,
+  "seed": 20261104
+}

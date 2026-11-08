@@ -1,0 +1,101 @@
+{
+  "_generated_by": "scripts/gen_configs.py",
+  "_note": "Exported from the implementing modules; do not edit by hand.",
+  "split": {
+    "seed": "GalaxyHRGuard-v0.1-20261103",
+    "rule": "participants sorted by sha256(seed + participant_id), first 6 held out",
+    "held_out": [
+      "P08",
+      "P13",
+      "P17",
+      "P19",
+      "P20",
+      "P23"
+    ],
+    "development": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P09",
+      "P10",
+      "P11",
+      "P12",
+      "P14",
+      "P15",
+      "P16",
+      "P18",
+      "P21",
+      "P22",
+      "P24"
+    ],
+    "n_subjects_total": 24
+  },
+  "windowing": {
+    "window_ms": 8000,
+    "stride_ms": 2000,
+    "error_threshold_bpm": 10.0,
+    "min_good_samples": 4
+  },
+  "clock_rule": {
+    "candidate_offsets_ms": {
+      "raw": 0,
+      "author_minus_9h": -32400000
+    },
+    "min_best_overlap": 0.75,
+    "min_margin_over_second": 0.3,
+    "selection_uses_hr_values": false
+  },
+  "statistics": {
+    "alpha_one_sided": 0.05,
+    "resampling_unit": "participant",
+    "bootstrap": "percentile, participant-clustered",
+    "default_n_boot": 8000,
+    "seed": 20261104,
+    "familywise_correction": "studentized max-T (Westfall-Young)"
+  },
+  "activity_groups": {
+    "G1_sedentary_desk": [
+      "adaptation",
+      "baseline",
+      "meditation-1",
+      "meditation-2",
+      "screen-reading",
+      "keyboard-typing",
+      "mobile-typing"
+    ],
+    "G2_speech": [
+      "tsst-prep",
+      "tsst-speech",
+      "ssst-prep",
+      "ssst-sing"
+    ],
+    "G3_rest": [
+      "rest-1",
+      "rest-2",
+      "rest-3",
+      "rest-4",
+      "rest-5"
+    ],
+    "G4_active": [
+      "standing",
+      "walking",
+      "jogging",
+      "running"
+    ]
+  },
+  "frozen_dev_reference": {
+    "pooled_supply_share": 0.2104957958828646,
+    "subject_equal_supply_share": 0.1905505977934112,
+    "within_person_activity_gradient": 3.6473391616266513,
+    "error_rate_q75_over_q25": 3.8260548995033163,
+    "mean_refusal_rate": 0.1086692669815535,
+    "eta2_participant": 0.4327028871941862,
+    "eta2_group": 0.128277953151707,
+    "eta2_cell": 0.4390191596541068
+  },
+  "frozen_dev_tolerance": 1e-09
+}

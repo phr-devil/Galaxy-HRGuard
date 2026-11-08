@@ -1,0 +1,42 @@
+# ---------------------------------------------------------------------------
+# Galaxy-HRGuard -- reproduction repository
+#
+# Two rules drive this file.
+#   1. Raw upstream data and per-window participant tables are never committed.
+#   2. Anything regenerable goes to outputs/ and stays out of history.
+# ---------------------------------------------------------------------------
+
+# --- licensed raw data (obtain from Zenodo, see data/README.md) ---
+data/raw/
+data/sealed/
+*.zip
+!data/README.md
+
+# --- regenerated artefacts ---
+outputs/
+
+# --- per-window and per-participant derived tables ---
+*.parquet
+evidence/**/*.csv
+evidence/**/*.xlsx
+
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# --- tooling ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+
+# --- local / private ---
+.env
+.env.*
+.DS_Store
+Thumbs.db

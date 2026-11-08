@@ -1,0 +1,10 @@
+{
+  "test": "clock_rule_reproduces_frozen_dev_decisions",
+  "dev_subjects_checked": 16,
+  "skipped_no_files": [],
+  "mismatches": [],
+  "all_match": true,
+  "degenerate_reference_decisions": [],
+  "note": "a non-empty degenerate list would mean the frozen DEV reference itself carries the reversed-argument signature",
+  "sealed_values_used": false
+}

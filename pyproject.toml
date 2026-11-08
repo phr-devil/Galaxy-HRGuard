@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hrguard"
+version = "0.1.0"
+description = "Three-state reliability measurement for wrist heart rate: wrong-output share, availability and full correct coverage"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "LicenseRef-Proprietary-Pending" }
+keywords = ["wearable", "photoplethysmography", "heart rate", "reliability", "missing data", "selective prediction"]
+classifiers = [
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+  "numpy==2.5.4",
+  "pandas==3.1.0",
+  "scipy==1.18.1",
+  "scikit-learn==1.9.1",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.2.0"]
+
+[project.urls]
+Homepage = "https://github.com/phr-devil/Galaxy-HRGuard"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,341 @@
+{
+  "document": "Galaxy-HRGuard v1.7 SEALED independent confirmation -- RESULT",
+  "date": "2026-11-04",
+  "authorised_by_user": true,
+  "authorisation_scope": "A1 unseal + A2 local extraction + A3 one zero-fit run",
+  "state": "CONFIRMATION_COMPLETED",
+  "one_shot": true,
+  "parameters_fitted": 0,
+  "gpu_used": false,
+  "downloads": 0,
+  "reruns_after_result": 0,
+  "cohort": {
+    "authorised": [
+      "P08",
+      "P13",
+      "P17",
+      "P19",
+      "P20",
+      "P23"
+    ],
+    "evaluable": [
+      "P13",
+      "P17",
+      "P19",
+      "P20",
+      "P23"
+    ],
+    "n_evaluable": 5,
+    "excluded": {
+      "P08": {
+        "state": "DATA_NOT_EVALUABLE",
+        "reason": "missing required raw file(s): GalaxyWatch/HR.csv",
+        "enters_numerator": false,
+        "enters_denominator": false
+      }
+    },
+    "extracted_files": 23,
+    "extracted_MB": 72.69
+  },
+  "clock_rule": {
+    "rule": "closed candidate set {raw:0, author_minus_9h:-32400000}; score = fraction of Polar timestamps inside the watch-PPG timestamp range; PASS iff best >= 0.75 AND best-second >= 0.30 AND the residual envelope holds. Timestamps only; reference HR error is never used.",
+    "per_participant": {
+      "P08": {
+        "state": "DATA_NOT_EVALUABLE",
+        "overlap": null,
+        "recipe": null,
+        "res_lo_s": null,
+        "res_hi_s": null
+      },
+      "P13": {
+        "state": "ALIGNMENT_PASS",
+        "overlap": {
+          "raw": 0.0,
+          "author_minus_9h": 0.9557149925779317
+        },
+        "recipe": "author_minus_9h",
+        "res_lo_s": -178.384,
+        "res_hi_s": -19.536
+      },
+      "P17": {
+        "state": "ALIGNMENT_PASS",
+        "overlap": {
+          "raw": 0.0,
+          "author_minus_9h": 0.9984512132163139
+        },
+        "recipe": "author_minus_9h",
+        "res_lo_s": -5.024,
+        "res_hi_s": -37.626
+      },
+      "P19": {
+        "state": "ALIGNMENT_PASS",
+        "overlap": {
+          "raw": 0.0,
+          "author_minus_9h": 0.953090096798213
+        },
+        "recipe": "author_minus_9h",
+        "res_lo_s": -189.383,
+        "res_hi_s": -33.689
+      },
+      "P20": {
+        "state": "ALIGNMENT_PASS",
+        "overlap": {
+          "raw": 0.0,
+          "author_minus_9h": 0.8779700115340254
+        },
+        "recipe": "author_minus_9h",
+        "res_lo_s": -527.001,
+        "res_hi_s": -38.356
+      },
+      "P23": {
+        "state": "ALIGNMENT_PASS",
+        "overlap": {
+          "raw": 0.0,
+          "author_minus_9h": 0.939693524468611
+        },
+        "recipe": "author_minus_9h",
+        "res_lo_s": -243.869,
+        "res_hi_s": -28.373
+      }
+    },
+    "written_before_any_label": true
+  },
+  "primary_estimand_E1": {
+    "definition": "pooled supply share = wrong-value windows / (wrong-value windows + refused windows); refused = a valid Polar reference exists and no usable watch value was delivered",
+    "n_wrong": 147,
+    "n_refused": 1066,
+    "denominator": 1213,
+    "windows_total": 7713,
+    "point_estimate": 0.12118713932399011,
+    "ci95_participant_cluster_bootstrap": [
+      0.04928909952606635,
+      0.21048321048321048
+    ],
+    "criterion": "the entire 95% participant-level bootstrap interval of the pooled supply share lies below 0.50",
+    "status": "SUPPORTED",
+    "tier": "PRIMARY / CONFIRMATORY",
+    "interpretation": "0.1212 means that of every 100 unreliable windows, about 12.1 carried a wrong value and about 87.9 were the device refusing to output at all"
+  },
+  "secondary_descriptive": {
+    "E1b_subject_equal_supply_share": {
+      "point": 0.11604768340448413,
+      "ci95": [
+        0.05157011300732125,
+        0.16902758154677805
+      ]
+    },
+    "E2_within_person_activity_gradient": {
+      "point": 4.381814116410758,
+      "ci95": [
+        3.132020027786408,
+        6.36610788623945
+      ],
+      "positive_participants": "5/5",
+      "per_participant": {
+        "P13": 5.2448310575966035,
+        "P17": 1.89308341286094,
+        "P19": 2.2530803878867447,
+        "P20": 5.371741085283314,
+        "P23": 7.146334638426186
+      },
+      "exact_signflip_p_one_sided": 0.03125,
+      "exact_sign_test_p_one_sided": 0.03125,
+      "status": "DESCRIPTIVE",
+      "why_descriptive": "no admissible one-sided exact test at n <= 5 satisfies the pre-registered credibility rule; at n = 4 the smallest attainable one-sided p is 0.0625 > alpha = 0.05 and at n = 5 the exact test requires all five participant deltas to be positive (power about 0.52). A null result is UNTESTED, never refuted."
+    },
+    "E3_between_person_spread": {
+      "point": 5.217057509771078,
+      "per_participant_error_rate": {
+        "P13": 0.014964788732394365,
+        "P17": 0.002059025394646534,
+        "P19": 0.047619047619047616,
+        "P20": 0.008026755852842809,
+        "P23": 0.04187604690117253
+      },
+      "status": "DESCRIPTIVE"
+    },
+    "E4_device_refusal_rate": {
+      "point": 0.13949741307507296,
+      "ci95": [
+        0.0833551601186629,
+        0.1837213994275574
+      ],
+      "per_participant": {
+        "P13": 0.23450134770889489,
+        "P17": 0.045841519318926,
+        "P19": 0.10374261326329613,
+        "P20": 0.10048134777376655,
+        "P23": 0.2129202373104812
+      },
+      "status": "DESCRIPTIVE"
+    },
+    "E5_eta2_participant_share": {
+      "point": 0.3367752401311296,
+      "status": "DESCRIPTIVE",
+      "note": "no eta-squared quantity is reported in the confirmation side"
+    }
+  },
+  "independent_recomputation": {
+    "implementation": "separate module, no import from v1_6_confirm_run / audit_raw_dev / probe_dev_windows",
+    "checks": [
+      {
+        "quantity": "n_evaluable",
+        "ledger": 5,
+        "independent": 5,
+        "abs_diff": 0.0,
+        "tolerance": 0,
+        "pass": true
+      },
+      {
+        "quantity": "E1_pooled_supply_share",
+        "ledger": 0.12118713932399011,
+        "independent": 0.12118713932399011,
+        "abs_diff": 0.0,
+        "tolerance": 1e-09,
+        "pass": true
+      },
+      {
+        "quantity": "E2_point_estimate",
+        "ledger": 4.381814116410758,
+        "independent": 4.381814116410758,
+        "abs_diff": 0.0,
+        "tolerance": 1e-09,
+        "pass": true
+      },
+      {
+        "quantity": "E2_exact_signflip_p_one_sided",
+        "ledger": 0.03125,
+        "independent": 0.03125,
+        "abs_diff": 0.0,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "quantity": "per_participant_counts_(wrong,refused)",
+        "ledger": {
+          "P13": [
+            17,
+            348
+          ],
+          "P17": [
+            3,
+            70
+          ],
+          "P19": [
+            65,
+            158
+          ],
+          "P20": [
+            12,
+            167
+          ],
+          "P23": [
+            50,
+            323
+          ]
+        },
+        "independent": {
+          "P13": [
+            17,
+            348
+          ],
+          "P17": [
+            3,
+            70
+          ],
+          "P19": [
+            65,
+            158
+          ],
+          "P20": [
+            12,
+            167
+          ],
+          "P23": [
+            50,
+            323
+          ]
+        },
+        "pass": true
+      }
+    ],
+    "all_pass": true,
+    "bootstrap": {
+      "ledger_ci95": [
+        0.04928909952606635,
+        0.21048321048321048
+      ],
+      "independent_ci95": [
+        0.04928909952606635,
+        0.21324245374878287
+      ],
+      "method": "independent RNG stream and n_boot=20000, so exact equality is not expected; agreement is judged on whether the two intervals overlap and both stay below the 0.50 benchmark",
+      "overlap": true,
+      "both_below_0p50": true
+    },
+    "reading": "the two implementations agree exactly on the point estimate, on the per-participant numerator and denominator and on the exact p value; the bootstrap intervals differ only in the upper bound because the RNG stream and n_boot differ, and both lie entirely below 0.50"
+  },
+  "paper_decision": {
+    "label": "CONFIRMED_NARROW_CLAIM",
+    "reason": "the supply-boundary component is independently supported; the activity component is reported as a descriptive within-person observation because the held-out cohort was not powered to test it",
+    "decided_by": "the frozen decision matrix in V1_7_SEALED_RUNBOOK.md section 5, applied to the estimate and its interval only",
+    "power_values_used_in_the_decision": false
+  },
+  "deviations_and_incidents": [
+    {
+      "id": "D1",
+      "when": "extraction",
+      "what": "the v1.7 runbook section 2 said ACC need not be extracted, but the inherited inclusion rule G-EVAL clause (1) requires all five raw files present and label_participant() reads the full FILES map; the first preflight therefore returned DATA_NOT_EVALUABLE for all six on a bookkeeping technicality",
+      "fix": "ACC was extracted for all six (48.76 MB) so that the STRICTER rule is satisfied",
+      "effect_on_results": "none -- a static check confirms watch_acc is read but never referenced by any estimand (0 occurrences in the estimator code)",
+      "record": "evidence/v1_7/sealed_file_manifest.json (acc_rationale) and evidence/v1_7/v1_7_preflight_attempt1_input_gap.json"
+    },
+    {
+      "id": "D2",
+      "when": "first preflight with ACC present",
+      "what": "stage_preflight called infer_offset(watch_ppg, polar) while the frozen semantics (audit_raw_dev.infer_offset) are infer_offset(polar, watch_ppg). The candidate offset is added to the REFERENCE timestamps, so the reversed order makes both candidate scores exactly 0.0 (NO_MATCH) for every participant",
+      "detection": "all six participants returned identical 0.0/0.0 overlap, which is impossible for genuinely misaligned clocks because the raw timestamp ranges differ by about nine hours",
+      "fix": "argument order corrected; verified WITHOUT looking at any SEALED label: on DEV the corrected call reproduces the frozen decision for 16/16 subjects (test_clock_rule.py), and the DEV three-layer verification was re-run to DEV_VERIFY_OK with max_abs_diff 0.0",
+      "effect_on_results": "the run that produced the reported estimate uses the corrected call; no SEALED label was computed or inspected before the fix",
+      "record": "test_clock_rule.py and evidence/v1_7/v1_7_clock_rule_test.json"
+    }
+  ],
+  "verification_status": {
+    "dev_three_layer": "DEV_VERIFY_OK (layer1 8/8, layer2 24924x5 zero diff, layer3 6/6) after the D2 fix",
+    "clock_rule_test": {
+      "subjects": 16,
+      "all_match": true,
+      "degenerate": []
+    },
+    "independent_recompute": "5/5 checks pass",
+    "criterion_audit": "REPLACED by an exact sign-flip test, then DEMOTED TO DESCRIPTIVE because no admissible one-sided test at n <= 5 satisfies the pre-registered credibility rule"
+  },
+  "mandatory_disclosures": [
+    {
+      "id": "X1",
+      "topic": "cross-project contact",
+      "text": "The sibling project <sibling-project> parsed the raw signals of P17 / P19 / P20 / P23 (and had byte-level access to P08 / P13) on 2026-11-02, BEFORE this project's protocol was frozen. Subject-level statistics and a 32,397-row window cache were written, with no activity labels (session = '?'). None of the seven estimands can be computed from those artefacts, and no sibling value entered any DEV-side decision. It is nevertheless NOT correct to describe this cohort as never handled by anyone.",
+      "record": "evidence/v1_6/v1_6_contact_ledger.json"
+    },
+    {
+      "id": "X2",
+      "topic": "P08 not evaluable",
+      "text": "P08 lacks GalaxyWatch/HR.csv. A missing file makes 'the device emitted nothing' indistinguishable from 'the file was not recorded', so P08 enters neither a numerator nor a denominator and is NOT counted as a device refusal. Evaluable n = 5."
+    },
+    {
+      "id": "X3",
+      "topic": "no power for the activity component",
+      "text": "At n <= 5 no admissible one-sided exact test can carry the activity component: at n = 4 the smallest attainable p is 0.0625 > 0.05, and at n = 5 rejection requires all five deltas to be positive (power about 0.52). This is a property of the design, not of the data. A null result is UNTESTED, never refuted."
+    }
+  ],
+  "not_done": [
+    "no model was fitted",
+    "no threshold was calibrated",
+    "no hyper-parameter was searched",
+    "no second database",
+    "no GPU",
+    "no download",
+    "no rerun after seeing the result",
+    "no claim was upgraded from descriptive to confirmatory"
+  ]
+}

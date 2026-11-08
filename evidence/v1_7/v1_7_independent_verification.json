@@ -1,0 +1,171 @@
+{
+  "stage": "independent_verification",
+  "implementation": "separate module, no import from v1_6_confirm_run / audit_raw_dev / probe_dev_windows",
+  "checks": [
+    {
+      "quantity": "n_evaluable",
+      "ledger": 5,
+      "independent": 5,
+      "abs_diff": 0.0,
+      "tolerance": 0,
+      "pass": true
+    },
+    {
+      "quantity": "E1_pooled_supply_share",
+      "ledger": 0.12118713932399011,
+      "independent": 0.12118713932399011,
+      "abs_diff": 0.0,
+      "tolerance": 1e-09,
+      "pass": true
+    },
+    {
+      "quantity": "E2_point_estimate",
+      "ledger": 4.381814116410758,
+      "independent": 4.381814116410758,
+      "abs_diff": 0.0,
+      "tolerance": 1e-09,
+      "pass": true
+    },
+    {
+      "quantity": "E2_exact_signflip_p_one_sided",
+      "ledger": 0.03125,
+      "independent": 0.03125,
+      "abs_diff": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "quantity": "per_participant_counts_(wrong,refused)",
+      "ledger": {
+        "P13": [
+          17,
+          348
+        ],
+        "P17": [
+          3,
+          70
+        ],
+        "P19": [
+          65,
+          158
+        ],
+        "P20": [
+          12,
+          167
+        ],
+        "P23": [
+          50,
+          323
+        ]
+      },
+      "independent": {
+        "P13": [
+          17,
+          348
+        ],
+        "P17": [
+          3,
+          70
+        ],
+        "P19": [
+          65,
+          158
+        ],
+        "P20": [
+          12,
+          167
+        ],
+        "P23": [
+          50,
+          323
+        ]
+      },
+      "pass": true
+    }
+  ],
+  "bootstrap": {
+    "ledger_ci95": [
+      0.04928909952606635,
+      0.21048321048321048
+    ],
+    "independent_ci95": [
+      0.04928909952606635,
+      0.21324245374878287
+    ],
+    "method": "independent RNG stream and n_boot=20000, so exact equality is not expected; agreement is judged on whether the two intervals overlap and both stay below the 0.50 benchmark",
+    "overlap": true,
+    "both_below_0p50": true
+  },
+  "verdict": {
+    "all_estimand_checks_pass": true,
+    "E1_criterion_reproduced": true,
+    "bootstrap_interval_consistent": true,
+    "ledger_status_E1": "SUPPORTED",
+    "ledger_paper_label": "CONFIRMED_NARROW_CLAIM"
+  },
+  "independent_values": {
+    "n_evaluable": 5,
+    "participants": [
+      "P13",
+      "P17",
+      "P19",
+      "P20",
+      "P23"
+    ],
+    "windows_total": 7713,
+    "n_wrong": 147,
+    "n_refused": 1066,
+    "E1_pooled_supply_share": 0.12118713932399011,
+    "E1_ci95": [
+      0.04928909952606635,
+      0.21324245374878287
+    ],
+    "E2_deltas": {
+      "P13": 5.2448310575966035,
+      "P17": 1.89308341286094,
+      "P19": 2.2530803878867447,
+      "P20": 5.371741085283314,
+      "P23": 7.146334638426186
+    },
+    "E2_point_estimate": 4.381814116410758,
+    "E2_exact_signflip_p_one_sided": 0.03125,
+    "per_participant": {
+      "P13": {
+        "windows": 1484,
+        "correct_or_refused": 1484,
+        "wrong": 17,
+        "refused": 348,
+        "share": 0.04657534246575343
+      },
+      "P17": {
+        "windows": 1527,
+        "correct_or_refused": 1527,
+        "wrong": 3,
+        "refused": 70,
+        "share": 0.0410958904109589
+      },
+      "P19": {
+        "windows": 1523,
+        "correct_or_refused": 1523,
+        "wrong": 65,
+        "refused": 158,
+        "share": 0.2914798206278027
+      },
+      "P20": {
+        "windows": 1662,
+        "correct_or_refused": 1662,
+        "wrong": 12,
+        "refused": 167,
+        "share": 0.0670391061452514
+      },
+      "P23": {
+        "windows": 1517,
+        "correct_or_refused": 1517,
+        "wrong": 50,
+        "refused": 323,
+        "share": 0.13404825737265416
+      }
+    }
+  },
+  "note": "disagreements are reported, never suppressed"
+}

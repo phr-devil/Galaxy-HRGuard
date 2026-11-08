@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this code, cite it as described below. The accompanying manuscript is not published yet, so no article DOI is asserted."
+title: "Galaxy-HRGuard: three-state reliability measurement for wrist heart rate"
+version: 0.1.0
+date-released: 2026-11-08
+type: software
+license: LicenseRef-Proprietary-Pending
+license-url: "https://github.com/phr-devil/Galaxy-HRGuard/blob/main/LICENSE"
+repository-code: "https://github.com/phr-devil/Galaxy-HRGuard"
+url: "https://github.com/phr-devil/Galaxy-HRGuard"
+abstract: >-
+  Reference implementation of a three-state reliability measurement for wrist
+  heart rate. Windows in which the device reports a value are labelled correct
+  or wrong against a chest-belt reference at a 10 bpm threshold; windows in
+  which the device declines to report are kept in the population as a third
+  state. The wrong-output share among unreliable windows, its participant-
+  clustered bootstrap interval, the availability and conditional-accuracy
+  decomposition of full correct coverage, and the exploratory analyses of
+  Table 3 of the accompanying manuscript are all computed here.
+keywords:
+  - wearable sensors
+  - photoplethysmography
+  - heart rate
+  - reliability measurement
+  - missing data
+  - selective prediction
+  - reproducibility
+authors:
+  - name: "Galaxy-HRGuard authors"
+references:
+  - type: dataset
+    title: "GalaxyPPG: A PPG Signal Dataset Collected in Semi-Naturalistic Settings Using Galaxy Watch"
+    version: 1.0.0
+    doi: 10.5281/zenodo.14635823
+    license: CC-BY-4.0
+    authors:
+      - family-names: Park
+        given-names: Sangjun
+      - family-names: Zheng
+        given-names: Dejiang
+      - family-names: Lee
+        given-names: Uichin

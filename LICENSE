@@ -1,0 +1,28 @@
+Copyright (c) 2026 the Galaxy-HRGuard authors. All rights reserved.
+
+NO LICENCE HAS BEEN GRANTED YET.
+
+This repository is published so that the measurement protocol described in the
+accompanying manuscript can be inspected, reviewed and executed by readers and
+referees. Publication in a public repository is not a grant of rights: absent a
+separate written licence, no permission is given to copy, modify, distribute,
+sublicense or use this software, in source or binary form, beyond what
+applicable law allows (fair use, quotation, and the rights a licensee of the
+upstream dataset already holds).
+
+A licence will be chosen, and this file replaced, once the copyright holders
+have agreed on one. Candidate licences have been discussed; none has been
+adopted. Until then this file must not be read as MIT, Apache-2.0, BSD or any
+other standard licence.
+
+Scope
+-----
+This statement covers the source code, tests, configuration and documentation
+in this repository. It does not cover the third-party dataset used by the code:
+
+  GalaxyPPG v1.0.0, DOI 10.5281/zenodo.14635823, licensed CC BY 4.0 by its
+  authors (Park, Zheng and Lee, KAIST). That dataset is not redistributed here;
+  see data/README.md for how to obtain it and what its licence requires.
+
+Third-party dependencies (NumPy, pandas, SciPy, scikit-learn, pytest) remain
+under their own licences and are not affected by this file.
