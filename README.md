@@ -201,8 +201,29 @@ cite the dataset and this repository:
 > Galaxy-HRGuard v0.1.0. Three-state reliability measurement for wrist heart
 > rate. https://github.com/phr-devil/Galaxy-HRGuard
 
-## Status
+## Verification status
 
-`v0.1.0` is a research code release, not a validated reproduction package. The
-unit tests pass and the measurement chain runs end to end on the licensed data,
-but the release has not been checked against every number in the manuscript.
+Checked on 2026-11-08 with the pinned environment on a clean virtual environment
+(Python 3.13.14, numpy 2.5.4, pandas 3.1.0, scipy 1.18.1, scikit-learn 1.9.1).
+
+| Check | Result |
+| --- | --- |
+| `pip install -e ".[test]"` in a fresh venv | succeeds |
+| `pytest -q` | 26 passed |
+| Import of every module | succeeds |
+| Participant split regenerated from the published seed | reproduces the frozen held-out set |
+| Window universe rebuilt from the raw development files | 24,924 windows, 726 wrong, 2,723 no-output |
+| `06_dev_verify.py --stage dev-verify` | `DEV_VERIFY_OK` |
+| Window layer rebuilt and compared row by row | 24,924 rows × 5 columns, 0 differences |
+| Frozen development estimands recomputed | all 8 agree to `0.00e+00` |
+| Headline record reassembled from committed artefacts | identical to the committed record |
+
+The development estimands that reproduce exactly are the wrong-output share
+(0.2104957959), its subject-equal variant (0.1905505978), the within-participant
+activity gradient (3.6473391616), the quartile ratio of participant error rates
+(3.8260548995), the refusal rate (0.1086692670), and the variance decomposition
+(0.4327 for participant, 0.1283 for intensity class, 0.4390 for the interaction).
+
+`v0.1.0` remains a research code release rather than a validated reproduction
+package: the held-out confirmation is not re-run here by design, and the offline
+ranking and online alerting audits are not included.
