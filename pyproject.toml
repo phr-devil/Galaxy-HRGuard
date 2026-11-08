@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,8 +7,9 @@ name = "hrguard"
 version = "0.1.0"
 description = "Three-state reliability measurement for wrist heart rate: wrong-output share, availability and full correct coverage"
 readme = "README.md"
-requires-python = ">=3.10"
-license = { text = "LicenseRef-Proprietary-Pending" }
+requires-python = ">=3.12"
+license = "LicenseRef-Proprietary"
+license-files = ["LICENSE"]
 keywords = ["wearable", "photoplethysmography", "heart rate", "reliability", "missing data", "selective prediction"]
 classifiers = [
   "Intended Audience :: Science/Research",

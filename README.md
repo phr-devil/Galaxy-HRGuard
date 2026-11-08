@@ -38,8 +38,8 @@ population from the one a monitoring claim is about.
 
 ## Install
 
-Python 3.10 or newer. The pinned environment is the one that produced the
-frozen artefacts:
+Python 3.12 or newer is required by the pinned scientific stack. The pinned
+environment is the one that produced the frozen artefacts:
 
 ```bash
 python -m venv .venv
